@@ -58,7 +58,7 @@ namespace Krouzky {
             this.telefonPracovniTextBox.Text = lektor.osoba.telefonPracovni;
             this.poznamkaTextBox.Text = lektor.popis;
 
-            this.celkemHodinTextBox.Text = Convert.ToString(this.orm_.calculateHoursTotal(lektor.idLektor, true));
+            this.celkemHodinTextBox.Text = Convert.ToString(this.orm_.calculateHoursTotal(lektor.idLektor));
         }
 
         public FormLektor() {
@@ -72,7 +72,7 @@ namespace Krouzky {
         private void mzdaMesicCombo_SelectionChangeCommitted(object sender, EventArgs e) {
             try {
                 DateTime dateTime = new DateTime(Int32.Parse(this.mzdaRokCombo.Text), getMonth(this.mzdaMesicCombo.Text), 1);
-                this.mzdaTextBox.Text = Convert.ToString(this.orm_.calculateSalary(dateTime, dateTime.AddMonths(1), this.lektor.idLektor, true));
+                this.mzdaTextBox.Text = Convert.ToString(this.orm_.calculateSalary(dateTime, dateTime.AddMonths(1), this.lektor.idLektor));
             }
             catch (Exception) { }
         }
@@ -80,7 +80,7 @@ namespace Krouzky {
         private void mzdaRokCombo_SelectionChangeCommitted(object sender, EventArgs e) {
             try {
                 DateTime dateTime = new DateTime(Int32.Parse(this.mzdaRokCombo.Text), getMonth(this.mzdaMesicCombo.Text), 1);
-                this.mzdaTextBox.Text = Convert.ToString(this.orm_.calculateSalary(dateTime, dateTime.AddMonths(1), this.lektor.idLektor, true));
+                this.mzdaTextBox.Text = Convert.ToString(this.orm_.calculateSalary(dateTime, dateTime.AddMonths(1), this.lektor.idLektor));
             }
             catch (Exception) { }
         }
@@ -88,7 +88,7 @@ namespace Krouzky {
         private void hodinMesicCombo_SelectionChangeCommitted(object sender, EventArgs e) {
             try {
                 DateTime dateTime = new DateTime(Int32.Parse(this.mzdaRokCombo.Text), getMonth(this.mzdaMesicCombo.Text), 1);
-                this.hodinTextBox.Text = Convert.ToString(this.orm_.calculateHoursInPeriod(dateTime, dateTime.AddMonths(1), this.lektor.idLektor, true));
+                this.hodinTextBox.Text = Convert.ToString(this.orm_.calculateHoursInPeriod(dateTime, dateTime.AddMonths(1), this.lektor.idLektor));
             }
             catch (Exception) { }
         }
@@ -96,7 +96,7 @@ namespace Krouzky {
         private void hodinRokCombo_SelectionChangeCommitted(object sender, EventArgs e) {
             try {
                 DateTime dateTime = new DateTime(Int32.Parse(this.mzdaRokCombo.Text), getMonth(this.mzdaMesicCombo.Text), 1);
-                this.hodinTextBox.Text = Convert.ToString(this.orm_.calculateHoursInPeriod(dateTime, dateTime.AddMonths(1), this.lektor.idLektor, true));
+                this.hodinTextBox.Text = Convert.ToString(this.orm_.calculateHoursInPeriod(dateTime, dateTime.AddMonths(1), this.lektor.idLektor));
             }
             catch (Exception) { }
         }
