@@ -76,52 +76,88 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalendarHeader.cs">
+    <Compile Include="TwoCols\CalendarHeaderTwoCols.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CalendarHeader.Designer.cs">
-      <DependentUpon>CalendarHeader.cs</DependentUpon>
+    <Compile Include="TwoCols\NaplanovanyTwoCols.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormLektor.cs">
+    <Compile Include="TwoCols\ProbehlyTwoCols.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TwoCols\TwoCols.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TwoCols\TwoCols.Designer.cs">
+      <DependentUpon>TwoCols.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLektor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLektor.Designer.cs">
+    <Compile Include="Forms\FormLektor.Designer.cs">
       <DependentUpon>FormLektor.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectorEnum.cs" />
-    <Compile Include="FormKrouzkyMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormKrouzkyMain.Designer.cs">
-      <DependentUpon>FormKrouzkyMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListItem.cs">
+    <Compile Include="ListItem\KontaktyListItem.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ListItem.Designer.cs">
-      <DependentUpon>ListItem.cs</DependentUpon>
+    <Compile Include="ListItem\KrouzkyListItem.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormLoading.cs">
+    <Compile Include="ListItem\LektorListItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SelectorEnum.cs" />
+    <Compile Include="Forms\FormKrouzkyMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLoading.Designer.cs">
+    <Compile Include="Forms\FormKrouzkyMain.Designer.cs">
+      <DependentUpon>FormKrouzkyMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListItem\ListItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListItem\ListItem.Designer.cs">
+      <DependentUpon>ListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLoading.Designer.cs">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CalendarHeader.resx">
-      <DependentUpon>CalendarHeader.cs</DependentUpon>
+    <Compile Include="ListItem\SkolyListItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TwoCols\CalendarHeaderTwoCols.resx">
+      <DependentUpon>CalendarHeaderTwoCols.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormKrouzkyMain.resx">
+    <EmbeddedResource Include="TwoCols\NaplanovanyTwoCols.resx">
+      <DependentUpon>NaplanovanyTwoCols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwoCols\ProbehlyTwoCols.resx">
+      <DependentUpon>ProbehlyTwoCols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwoCols\TwoCols.resx">
+      <DependentUpon>TwoCols.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormKrouzkyMain.resx">
       <DependentUpon>FormKrouzkyMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLektor.resx">
+    <EmbeddedResource Include="Forms\FormLektor.resx">
       <DependentUpon>FormLektor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListItem.resx">
+    <EmbeddedResource Include="ListItem\ListItem.resx">
       <DependentUpon>ListItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLoading.resx">
+    <EmbeddedResource Include="Forms\FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -134,6 +170,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Forms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -36,28 +36,30 @@
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nameLabel.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.nameLabel.Location = new System.Drawing.Point(51, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(412, 48);
+            this.nameLabel.Size = new System.Drawing.Size(200, 100);
             this.nameLabel.TabIndex = 2;
-            this.nameLabel.Text = "Miloslava Houžvičková";
+            this.nameLabel.Text = "Lorem ipsum dolor sit amet";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.nameLabel.DoubleClick += new System.EventHandler(this.nameLabel_DoubleClick);
             // 
             // checkBox
             // 
-            this.checkBox.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBox.AutoSize = true;
-            this.checkBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.checkBox.BackColor = System.Drawing.SystemColors.Control;
             this.checkBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.checkBox.Location = new System.Drawing.Point(3, 3);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(42, 42);
+            this.checkBox.Size = new System.Drawing.Size(0, 0);
             this.checkBox.TabIndex = 0;
             this.checkBox.UseVisualStyleBackColor = false;
             this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
+            // 
+            // ListItem
+            // 
+            this.MinimumSize = new System.Drawing.Size(200, 50);
             this.ResumeLayout(false);
 
         }

@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿#region UsingRegion
+
+using System;
+using System.Threading;
 using System.Windows.Forms;
 
-namespace Krouzky {
-    using System.Threading;
+#endregion
 
-    static class Program {
+namespace Krouzky {
+    internal static class Program {
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
-        static bool offline = false;
+        private static readonly bool offline = false;
 
         [STAThread]
-        static void Main() {
+        private static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
+
             ORM.ORM orm_ = null;
 
             bool err = false;
@@ -26,14 +26,14 @@ namespace Krouzky {
             if (!offline) {
                 loading.Show();
                 Thread t = new Thread(() => {
-                                          try {
-                                              orm_ = ORM.ORM.instance;
-                                          }
-                                          catch (Exception e) {
-                                              loading.setErrorText(e);
-                                              err = true;
-                                          }
-                                      });
+                    try {
+                        orm_ = ORM.ORM.instance;
+                    }
+                    catch (Exception e) {
+                        loading.setErrorText(e);
+                        err = true;
+                    }
+                });
                 t.Start();
 
                 t.Join();
