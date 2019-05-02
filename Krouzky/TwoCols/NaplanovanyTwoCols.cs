@@ -1,5 +1,6 @@
 ﻿#region UsingRegion
 
+using System;
 using System.Drawing;
 using System.Linq;
 using Krouzky.ORM.Database.DTO;
@@ -22,8 +23,22 @@ namespace Krouzky {
         }
 
         public string getTooltipText() {
-            return
-                $"Naplanovany krouzek\n{this.planned_.krouzek.pravidelnost.popis}\n{this.planned_.krouzek.skola.adresa.mesto}\n{this.planned_.krouzek.skola.adresa.ulice} {this.planned_.krouzek.skola.adresa.cisloPopisne}\n{this.planned_.krouzek.casKonaniOd.ToString("HH:mm")} - {this.planned_.krouzek.casKonaniDo.ToString("HH:mm")}";
+            try {
+                return
+                    $"Naplanovany krouzek\n" +
+                    $"ID: {this.planned_.krouzek.idKrouzek}\n" +
+                    $"{this.planned_.krouzek.pravidelnost.popis}\n" +
+                    $"{this.planned_.krouzek.skola.adresa.mesto}\n" +
+                    $"{this.planned_.krouzek.skola.adresa.ulice} {this.planned_.krouzek.skola.adresa.cisloPopisne}\n" +
+                    $"{this.planned_.krouzek.casKonaniOd.ToString("HH:mm")} - {this.planned_.krouzek.casKonaniDo.ToString("HH:mm")}";
+            }
+            catch (Exception e) {
+                Console.WriteLine(e);
+                return $"Naplanovany krouzek\n" +
+                       $"ID: {this.planned_.krouzek.idKrouzek}\n" +
+                       $"NULL POINTER EXCEPTION";
+                //throw;
+            }
         }
 
         private void InitializeComponent() {

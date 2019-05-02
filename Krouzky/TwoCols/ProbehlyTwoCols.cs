@@ -43,7 +43,7 @@ namespace Krouzky {
 
         public string getTooltipText() {
             return
-                $"Probehly krouzek\n{this.passed_.krouzek.pravidelnost.popis}\n{this.passed_.krouzek.skola.adresa.mesto}\n{this.passed_.krouzek.skola.adresa.ulice} {this.passed_.krouzek.skola.adresa.cisloPopisne}\n{this.passed_.krouzek.casKonaniOd.ToString("HH:mm")} - {this.passed_.krouzek.casKonaniDo.ToString("HH:mm")}";
+                $"Probehly krouzek\nID:{this.passed_.krouzek.idKrouzek}\n{this.passed_.krouzek.pravidelnost.popis}\n{this.passed_.krouzek.skola.adresa.mesto}\n{this.passed_.krouzek.skola.adresa.ulice} {this.passed_.krouzek.skola.adresa.cisloPopisne}\n{this.passed_.krouzek.casKonaniOd.ToString("HH:mm")} - {this.passed_.krouzek.casKonaniDo.ToString("HH:mm")}";
         }
 
 

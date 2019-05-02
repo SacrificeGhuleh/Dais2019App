@@ -12,6 +12,13 @@ namespace Krouzky {
         private static readonly Color SelectedBtnColor = SystemColors.ControlLight;
         private static readonly Color UnSelectedBtnColor = SystemColors.Control;
 
+        public bool selected {
+            get { return this.checkBox.Checked; }
+        }
+
+        public virtual void delete() {
+        }
+
         public ListItem() {
             this.InitializeComponent();
 

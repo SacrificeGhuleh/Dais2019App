@@ -1,6 +1,7 @@
 ﻿#region UsingRegion
 
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -297,6 +298,51 @@ namespace Krouzky {
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
             this.populate(((TextBox) sender).Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            new FormLektor(null).ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            this.populate();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            Control.ControlCollection controls = null;
+            //delete selected
+            switch (this.selected_) {
+                case selectorEnum.Lektori:
+                    controls = this.lektoriPanel.Controls;
+                    break;
+                case selectorEnum.Krouzky:
+                    controls = this.krouzkyPanel.Controls;
+                    break;
+                case selectorEnum.Skoly:
+                    controls = this.skolyPanel.Controls;
+                    break;
+                case selectorEnum.Kontakty:
+                    controls = this.kontaktyPanel.Controls;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            if (controls == null) return;
+
+            foreach (ListItem i in controls) {
+                if (i.selected) {
+                    try {
+                        i.delete();
+                    }
+                    catch (Exception exception) {
+                        Console.WriteLine(exception);
+                        MessageBox.Show("Nelze smazat zaznam");
+                    }
+                }
+            }
+
+            this.populate();
         }
     }
 }
